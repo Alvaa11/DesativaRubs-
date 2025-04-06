@@ -4,6 +4,19 @@ from time import sleep
 # print(py.position())
 
 def desativar(user : str, senha : str, rubs_selected : list):
+    
+    bf.alerta(
+        title='AVISO!!',
+        mess='''
+            O robô irá controlar seu mouse e teclado 
+                    então por favor, NÃO MEXA
+        para que possa ocorrer tudo bem com o  script mantenha a página
+        do rub em 75% de zoom. obrigado!
+''',
+        button='OK'
+    )
+    
+    
     # Abre um novo Browser
     bf.moverMouse(x=938, y=874)
     bf.clicar(button='right')
@@ -58,3 +71,12 @@ def desativar(user : str, senha : str, rubs_selected : list):
     bf.pressionarTecla('f4')
     bf.soltarTecla('alt')
 
+def error():
+    bf.alerta(
+        title='ERROR MESSENGE!',
+        mess='''
+                ESTÁ FALTANDO PREENCHER ALGUM DOS CAMPOS
+                POR FAVOR, INSIRA PREENCHA-OS E CONTINUE
+''',
+        button='OK'
+    )

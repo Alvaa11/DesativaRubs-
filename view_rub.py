@@ -20,8 +20,11 @@ def window_rub():
         user = ent_user.get()
         senha = ent_pass.get()
         rubs_selected = ent_rubs.get().split(',')
-        b.desativar(user, senha, rubs_selected)
-        return 
+        if user and senha and rubs_selected:
+            b.desativar(user, senha, rubs_selected)
+            return
+        else:
+            b.error() 
 
     # Dividindo a janela ----------------
     frm_up = Frame(win, width=310, height=50, bg=co1, relief='flat').grid(column=0, row=0, padx=1, pady=0, sticky=NSEW)

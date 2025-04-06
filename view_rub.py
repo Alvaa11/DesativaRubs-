@@ -20,7 +20,6 @@ def window_rub():
         user = ent_user.get()
         senha = ent_pass.get()
         rubs_selected = ent_rubs.get().split(',')
-        print(rubs_selected)
         if user == '' or senha == '' or rubs_selected == ['']:
             b.error()
             return

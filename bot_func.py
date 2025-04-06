@@ -20,6 +20,9 @@ def pressionarTecla(tecla : str):
 
     return
 
+def pressionarTeclas(*args : str):
+    py.hotkey(*args)
+
 def escrever(frase : str, interval : float = 0):
     py.typewrite(message=frase, interval=interval)
 

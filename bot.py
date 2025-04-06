@@ -38,6 +38,9 @@ def desativar(user : str, senha : str, rubs_selected : list):
     sleep(0.5)
     bf.pressionarTecla('f11')
     sleep(1.5)
+    bf.moverMouse(x=39, y=93)
+    bf.clicar()
+    sleep(0.5)
     bf.moverMouse(x=1567, y=441)
     bf.clicar()
     sleep(0.5)
@@ -67,16 +70,14 @@ def desativar(user : str, senha : str, rubs_selected : list):
     bf.clicar()
     sleep(0.5)
     bf.pressionarTecla('f11')
-    bf.segurarTecla('alt')
-    bf.pressionarTecla('f4')
-    bf.soltarTecla('alt')
+    bf.pressionarTeclas('alt', 'f4')
 
 def error():
     bf.alerta(
         title='ERROR MESSENGE!',
         mess='''
                 ESTÁ FALTANDO PREENCHER ALGUM DOS CAMPOS
-                POR FAVOR, INSIRA PREENCHA-OS E CONTINUE
+                POR FAVOR, PREENCHA-OS E CONTINUE
 ''',
         button='OK'
     )

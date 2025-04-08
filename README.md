@@ -1,0 +1,1 @@
+Todos os dias repositores vem buscar seus coletores e no final do dia quando devolvem temos que desativar todos um por um, o que as vezes pode ser demorado ou até mesmo não feito pela alta demanda de chamados do dia. O que era 4/5min se tornaram segundos.

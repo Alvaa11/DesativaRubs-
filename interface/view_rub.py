@@ -1,5 +1,5 @@
 from tkinter import *
-import bot as b
+import controller.bot_login as b
 
 co0 = "#f0f3f5"  # Preta / black
 co1 = "#feffff"  # branca / white
@@ -7,11 +7,9 @@ co2 = "#3fb5a3"  # verde / green
 co3 = "#38576b"  # valor / value
 co4 = "#403d3d"   # letra / letters
 
-
-
 def window_rub():
     win = Tk()
-    win.title('Rodar altera')
+    win.title('Desativar Rubs')
     win.geometry('310x350')
     win.configure(background=co1)
     win.resizable(height=FALSE, width=FALSE)
@@ -19,12 +17,13 @@ def window_rub():
     def iniciar():
         user = ent_user.get()
         senha = ent_pass.get()
-        rubs_selected = ent_rubs.get().split(',')
+        rubs_selected = sorted(ent_rubs.get().split(','))
+        bot = b.BotLogin(user, senha, rubs_selected)
         if user == '' or senha == '' or rubs_selected == ['']:
-            b.error()
+            bot.error()
             return
         else:
-            b.desativar(user, senha, rubs_selected)
+            bot.login()
             return 
 
     # Dividindo a janela ----------------
